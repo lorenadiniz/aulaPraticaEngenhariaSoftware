@@ -26,7 +26,7 @@ public class Avaliador {
 			}
 
 		});
-		//if para caso a lista tenha menos que 3 elementos
+		// if para caso a lista tenha menos que 3 elementos
 		maiores = maiores.subList(0, maiores.size() > 3 ? 3 : maiores.size());
 
 	}
@@ -39,6 +39,10 @@ public class Avaliador {
 	private double menorDeTodos = Double.POSITIVE_INFINITY;
 
 	public void avalia(Leilao leilao) {
+		if (leilao.getLances().size() == 0) {
+			maiorDeTodos = 0;
+			menorDeTodos = 0;
+		}
 
 		for (Lance lance : leilao.getLances()) {
 
