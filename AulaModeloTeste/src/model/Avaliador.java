@@ -2,6 +2,7 @@ package model;
 
 public class Avaliador {
 	private double maiorDeTodos = Double.NEGATIVE_INFINITY;
+	private double menorDeTodos = Double.POSITIVE_INFINITY;
 
 	public void avalia(Leilao leilao) {
 
@@ -11,6 +12,10 @@ public class Avaliador {
 				maiorDeTodos = lance.getValor();
 
 			}
+			if (lance.getValor() < menorDeTodos) {
+				menorDeTodos = lance.getValor();
+
+			}
 
 		}
 
@@ -18,6 +23,9 @@ public class Avaliador {
 
 	public double getMaiorLance() {
 		return maiorDeTodos;
+	}
 
+	public double getMenorLance() {
+		return menorDeTodos;
 	}
 }
